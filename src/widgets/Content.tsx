@@ -1,11 +1,9 @@
-import React from 'react';
+import type { ReactNode } from 'react'
 
-const Content = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+export default function Content({ children }: { children: ReactNode }) {
+  return (
+    <main className="flex-1 bg-gray-50 p-6">
+      <div className="mx-auto max-w-7xl">{children}</div>
+    </main>
+  )
 }
-
-export default Content;

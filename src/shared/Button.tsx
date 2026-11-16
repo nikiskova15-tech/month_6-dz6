@@ -1,33 +1,21 @@
+import type { ButtonHTMLAttributes } from 'react'
 import { cn } from './cn'
-import type { ButtonProps } from './types'
 
-export default function Button({
-  variant = 'primary',
-  size = 'md',
-  className,
-  children,
-  onClick,
-}: ButtonProps) {
-  const variantClasses = {
-    primary: 'bg-amber-800 text-white hover:bg-amber-900',
-    secondary: 'border border-amber-800 text-amber-900 hover:bg-amber-100',
-  }
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  active?: boolean
+}
 
-  const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-5 py-2.5 text-base',
-    lg: 'px-7 py-3 text-lg',
-  }
-
+export default function Button({ className, active, children, ...props }: ButtonProps) {
   return (
     <button
-      onClick={onClick}
       className={cn(
-        'rounded-lg font-medium transition-colors',
-        variantClasses[variant],
-        sizeClasses[size],
+        'cursor-pointer rounded-xl px-4 py-2 text-sm font-medium transition',
+        active
+          ? 'bg-indigo-600 text-white shadow-sm'
+          : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200',
         className
       )}
+      {...props}
     >
       {children}
     </button>
