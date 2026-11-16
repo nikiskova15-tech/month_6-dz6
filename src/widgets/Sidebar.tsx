@@ -10,15 +10,15 @@ const links = [
 
 export default function Sidebar() {
   return (
-    <aside className="border-t border-gray-200 bg-white p-4 md:border-r md:border-t-0">
-      <nav className="flex flex-col gap-1">
+    <aside className="border-t bg-white p-4 md:border-r md:border-t-0">
+      <nav className="grid gap-2">
         {links.map((l) => (
           <NavLink
             key={l.to}
             to={l.to}
             className={({ isActive }) =>
               cn(
-                'rounded px-3 py-2 text-sm',
+                'rounded-lg px-3 py-2 text-sm',
                 isActive ? 'bg-black text-white' : 'hover:bg-gray-100'
               )
             }

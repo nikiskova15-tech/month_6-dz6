@@ -1,7 +1,3 @@
-
-
-const Header = () => {
-      return <header className="border-b p-4 font-bold">Grid Gallery</header>
+export default function Header() {
+  return <header className="border-b bg-white p-4 font-bold">Grid-галерея раскладок</header>
 }
-
-export default Header;
