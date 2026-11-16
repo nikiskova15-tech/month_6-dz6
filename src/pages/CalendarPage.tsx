@@ -16,7 +16,7 @@ export default function CalendarPage() {
 
       <div className="grid grid-cols-7 gap-2 text-center text-sm">
         {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].map((d) => (
-          <div key={d} className="font-bold text-gray-400">
+          <div key={d} className="font-medium text-gray-400">
             {d}
           </div>
         ))}
