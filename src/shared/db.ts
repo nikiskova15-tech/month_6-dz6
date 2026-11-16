@@ -1,4 +1,4 @@
-export const products = [
+export const PRODUCTS = [
   {
     "id": 1,
     "title": "card 1",
@@ -60,3 +60,9 @@ export const products = [
     "description": "description 12"
   }
 ]
+
+export interface Product {
+  id: number
+  title: string
+  desc: string
+}
